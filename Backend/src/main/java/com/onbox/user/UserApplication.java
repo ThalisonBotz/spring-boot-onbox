@@ -10,6 +10,5 @@ public class UserApplication {
 		SpringApplication.run(UserApplication.class, args);
 	}
 
-	System.out.println("welo hord ");
 	
 }
