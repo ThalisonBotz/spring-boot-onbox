@@ -5,9 +5,9 @@ package com.onbox.user.entities;
     
         private String Name;
         private int Id;
-       private Double Valor;
+        private Double Valor;
         private String Validade ;
-       private String Contato;
+        private String Contato;
     
     
         public String getName() {
