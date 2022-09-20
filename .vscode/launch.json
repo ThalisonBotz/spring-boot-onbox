@@ -9,6 +9,16 @@
             "projectName": "user",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AplicationStart<user>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.onbox.user.start.AplicationStart",
+            "projectName": "user",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
