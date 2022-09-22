@@ -9,6 +9,46 @@
             "projectName": "user",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AplicationStart<user>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.onbox.user.start.AplicationStart",
+            "projectName": "user",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AplicationStart<user>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "academy.Onbox.springboot2.start.AplicationStart",
+            "projectName": "user",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AplicationStart<OnBox>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "academy.Onbox.springboot2.start.AplicationStart",
+            "projectName": "OnBox",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-UserwebApplication<OnBox>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.onbox.userweb.UserwebApplication",
+            "projectName": "OnBox",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
