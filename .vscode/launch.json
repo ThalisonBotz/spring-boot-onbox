@@ -39,6 +39,16 @@
             "projectName": "OnBox",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-UserwebApplication<OnBox>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.onbox.userweb.UserwebApplication",
+            "projectName": "OnBox",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
