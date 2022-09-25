@@ -1,10 +1,10 @@
-package com.onbox.user;
+package com.onbox.userweb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UserApplicationTests {
+class UserwebApplicationTests {
 
 	@Test
 	void contextLoads() {
