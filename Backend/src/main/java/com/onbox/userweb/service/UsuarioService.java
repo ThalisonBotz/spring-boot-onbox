@@ -1,6 +1,8 @@
 package com.onbox.userweb.service;
 
 import com.onbox.userweb.domain.Produto;
+import com.onbox.userweb.domain.Usuario;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -10,9 +12,9 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
-public class ProdutoService {
+public class UsuarioService {
 
-    private static List<Produto> produtos;
+    private static List<Usuario> ;
     // adicionar dados para exibição
 
     static {

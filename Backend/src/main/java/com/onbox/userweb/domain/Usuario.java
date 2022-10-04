@@ -7,11 +7,8 @@ import lombok.Data;
 @Data // para usar os get e set
 @AllArgsConstructor
 
-public class Produto {
+public class Usuario {
     private Long Id;
     private String nome;
-    private Double Valor;
-    private int Quantidade;
-    private String Validade;
-    private String Fornecedor;
+    private String senha;
 }
