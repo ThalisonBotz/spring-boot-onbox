@@ -8,7 +8,7 @@ import lombok.Data;
 @AllArgsConstructor
 
 public class Usuario {
-    private Long Id;
+    private Long id;
     private String nome;
     private String senha;
 }

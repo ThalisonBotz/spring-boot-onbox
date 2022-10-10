@@ -1,8 +1,8 @@
 package com.onbox.userweb.controller;
 
-import com.onbox.userweb.domain.Produto;
 import com.onbox.userweb.domain.Usuario;
-import com.onbox.userweb.service.ProdutoService;
+import com.onbox.userweb.repository.UsuarioRepository;
+import com.onbox.userweb.service.UsuarioService;
 import com.onbox.userweb.util.DateUtil;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -20,37 +20,36 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UsuarioControler {
     private final DateUtil dateUtil;
-    private final ProdutoService produtoService;
+    private final UsuarioService usuarioService;
 
     @GetMapping
     public ResponseEntity<List<Usuario>> list() {
         log.info(dateUtil.formarLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
-        return new ResponseEntity<>(produtoService.listall(), HttpStatus.OK);
+        return new ResponseEntity<>(usuarioService.listall(), HttpStatus.OK);
     }
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<Usuario> findByid(@PathVariable long id) {
         log.info(dateUtil.formarLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
-        return ResponseEntity.ok(produtoService.findById(id));
+        return ResponseEntity.ok(usuarioService.findById(id));
 
     }
 
     @PostMapping
-    public ResponseEntity<Produto> save(@RequestBody Produto produto) {
-        return new ResponseEntity<>(produtoService.save(produto), HttpStatus.CREATED);
-
+    public ResponseEntity<Usuario> save(@RequestBody Usuario usuario) {
+        return new ResponseEntity<>(usuarioService.save(usuario), HttpStatus.CREATED);
     }
 
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable long id) {
-        produtoService.delete(id);
+        usuarioService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
     }
 
     @PutMapping
-    public ResponseEntity<Void> delete(@RequestBody Usuario produto) {
-        produtoService.replace(produto);
+    public ResponseEntity<Void> delete(@RequestBody Usuario usuario) {
+        usuarioService.replace(usuario);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
     }

@@ -8,10 +8,10 @@ import lombok.Data;
 @AllArgsConstructor
 
 public class Produto {
-    private Long Id;
+    private Long id;
     private String nome;
-    private Double Valor;
-    private int Quantidade;
-    private String Validade;
-    private String Fornecedor;
+    private Double valor;
+    private int quantidade;
+    private String validade;
+    private String fornecedor;
 }

@@ -1,7 +1,5 @@
 package com.onbox.userweb.controller;
 
-
-
 import com.onbox.userweb.domain.Produto;
 import com.onbox.userweb.service.ProdutoService;
 import com.onbox.userweb.util.DateUtil;
@@ -20,37 +18,39 @@ import java.util.List;
 @Log4j2
 @RequiredArgsConstructor
 public class ProdutoControler {
-private final DateUtil dateUtil ;
-private final ProdutoService produtoService;
+    private final DateUtil dateUtil;
+    private final ProdutoService produtoService;
 
     @GetMapping
-    public ResponseEntity <List<Produto>>list (){
+    public ResponseEntity<List<Produto>> list() {
         log.info(dateUtil.formarLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
-        return new ResponseEntity<> (produtoService.listall(), HttpStatus.OK);
+        return new ResponseEntity<>(produtoService.listall(), HttpStatus.OK);
     }
-    @GetMapping( path =  "/{id}")
-    public ResponseEntity<Produto>findByid(@PathVariable long id ) {
+
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<Produto> findByid(@PathVariable long id) {
         log.info(dateUtil.formarLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
         return ResponseEntity.ok(produtoService.findById(id));
 
     }
-@PostMapping
-    public ResponseEntity<Produto> save(@RequestBody Produto produto) {
-    return new ResponseEntity<>(produtoService.save(produto), HttpStatus.CREATED);
 
-}
-    @DeleteMapping( path =  "/{id}")
-    public ResponseEntity<Void>delete(@PathVariable long id ) {
+    @PostMapping
+    public ResponseEntity<Produto> save(@RequestBody Produto produto) {
+        return new ResponseEntity<>(produtoService.save(produto), HttpStatus.CREATED);
+
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable long id) {
         produtoService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
+    }
 
-}
     @PutMapping
-    public ResponseEntity<Void>delete(@RequestBody Produto produto ) {
+    public ResponseEntity<Void> delete(@RequestBody Produto produto) {
         produtoService.replace(produto);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
 
     }
 
