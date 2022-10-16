@@ -1,6 +1,8 @@
 package com.onbox.userweb.controller;
 
 import com.onbox.userweb.domain.Produto;
+import com.onbox.userweb.requests.ProdutoPostRequestBody;
+import com.onbox.userweb.requests.ProdutoPutRequestBody;
 import com.onbox.userweb.service.ProdutoService;
 import com.onbox.userweb.util.DateUtil;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +25,7 @@ public class ProdutoControler {
     @GetMapping
     public ResponseEntity<List<Produto>> list() {
         log.info(dateUtil.formarLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
-        return new ResponseEntity<>(produtoService.listall(), HttpStatus.OK);
+        return new ResponseEntity<>(produtoService.listAll(), HttpStatus.OK);
     }
 
     @GetMapping(path = "/{id}")
@@ -34,8 +36,8 @@ public class ProdutoControler {
     }
 
     @PostMapping
-    public ResponseEntity<Produto> save(@RequestBody Produto produto) {
-        return new ResponseEntity<>(produtoService.save(produto), HttpStatus.CREATED);
+    public ResponseEntity<Produto> save(@RequestBody ProdutoPostRequestBody produtoPostRequestBody) {
+        return new ResponseEntity<>(produtoService.save(produtoPostRequestBody), HttpStatus.CREATED);
 
     }
 
@@ -47,8 +49,8 @@ public class ProdutoControler {
     }
 
     @PutMapping
-    public ResponseEntity<Void> delete(@RequestBody Produto produto) {
-        produtoService.replace(produto);
+    public ResponseEntity<Void> replace(@RequestBody ProdutoPutRequestBody produtoPutRequestBody) {
+        produtoService.replace(produtoPutRequestBody);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
     }

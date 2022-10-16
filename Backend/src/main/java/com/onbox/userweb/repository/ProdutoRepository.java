@@ -4,6 +4,7 @@ import com.onbox.userweb.domain.Produto;
 
 import java.util.List;
 
-public interface ProdutoRepository {// classe do banco
-    List<Produto> listAll();
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProdutoRepository extends JpaRepository<Produto, Long> {// classe do banco
 }
