@@ -3,7 +3,6 @@ package com.onbox.userweb.controller;
 import com.onbox.userweb.domain.Produto;
 import com.onbox.userweb.service.ProdutoService;
 import com.onbox.userweb.util.DateUtil;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
