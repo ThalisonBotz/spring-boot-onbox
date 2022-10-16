@@ -52,16 +52,6 @@
         },
         {
             "type": "java",
-            "name": "Spring Boot-UserwebApplication<user>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.onbox.userweb.UserwebApplication",
-            "projectName": "user",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
-        },
-        {
-            "type": "java",
             "name": "Spring Boot-UserwebApplication<userweb>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
