@@ -5,8 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class UserwebApplication {
-//http://localhost:8080/produto       Buscar no navegador
-//http://localhost:8080/produto/1     Filtrar o produto por id
+//http://localhost:8080/produto       buscar no navegador
 	public static void main(String[] args) {
 		SpringApplication.run(UserwebApplication.class, args);
 	}
