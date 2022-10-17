@@ -1,53 +1,59 @@
 package com.onbox.userweb.service;
 
 import com.onbox.userweb.domain.Usuario;
+import com.onbox.userweb.repository.UsuarioRepository;
+import com.onbox.userweb.requests.UsuarioPostRequestBody;
+import com.onbox.userweb.requests.UsuarioPutRequestBody;
+
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 @Service
+@RequiredArgsConstructor
+
 public class UsuarioService {
 
-    private static List<Usuario> usuarios;
-    // adicionar dados para exibição
-
-    static {
-        usuarios = new ArrayList<>(
-                List.of(new Usuario(1L, "Thalison", "admin")));
-    }
+    private final UsuarioRepository usuarioRepository;
 
     public List<Usuario> listall() {
-
-        return usuarios;
+        return usuarioRepository.findAll();
     }
 
     public Usuario findById(long id) { // quando nao localizar
-        return usuarios.stream()
-                .filter(usuario -> usuario.getId().equals(id))
-                .findFirst()
+        return usuarioRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "User not Found "));
-
     }
 
-    public Usuario save(Usuario usuario) {
-        usuario.setId(ThreadLocalRandom.current().nextLong(3, 100));
-        usuarios.add(usuario);
-        return usuario;
+    /**
+     * @param usuarioPostRequestBody
+     * @return
+     */
+    public Usuario save(UsuarioPostRequestBody usuarioPostRequestBody) {
+        return usuarioRepository.save(Usuario.builder()
+                .nome(usuarioPostRequestBody.getNome())
+                .senha(usuarioPostRequestBody.getSenha())
+                .email(usuarioPostRequestBody.getEmail())
+                .build());
 
     }
 
     public void delete(long id) {
-        usuarios.remove(findById(id));
+        usuarioRepository.delete(findById(id));
     }
 
-    public void replace(Usuario usuario) {
-
-        delete(usuario.getId());
-        usuarios.add(usuario);
-
+    public void replace(UsuarioPutRequestBody usuarioPutRequestBody) {
+        Usuario savedUsuario = findById(usuarioPutRequestBody.getId());
+        Usuario usuario = Usuario.builder()
+                .id(savedUsuario.getId())
+                .nome(usuarioPutRequestBody.getNome())
+                .senha(usuarioPutRequestBody.getSenha())
+                .email(usuarioPutRequestBody.getEmail())
+                .build();
+        usuarioRepository.save(usuario);
     }
 }

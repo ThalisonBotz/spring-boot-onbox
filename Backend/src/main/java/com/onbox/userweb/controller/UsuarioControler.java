@@ -1,6 +1,8 @@
 package com.onbox.userweb.controller;
 
 import com.onbox.userweb.domain.Usuario;
+import com.onbox.userweb.requests.UsuarioPostRequestBody;
+import com.onbox.userweb.requests.UsuarioPutRequestBody;
 import com.onbox.userweb.service.UsuarioService;
 import com.onbox.userweb.util.DateUtil;
 import lombok.RequiredArgsConstructor;
@@ -34,8 +36,8 @@ public class UsuarioControler {
     }
 
     @PostMapping
-    public ResponseEntity<Usuario> save(@RequestBody Usuario usuario) {
-        return new ResponseEntity<>(usuarioService.save(usuario), HttpStatus.CREATED);
+    public ResponseEntity<Usuario> save(@RequestBody UsuarioPostRequestBody usuarioPostRequestBody) {
+        return new ResponseEntity<>(usuarioService.save(usuarioPostRequestBody), HttpStatus.CREATED);
     }
 
     @DeleteMapping(path = "/{id}")
@@ -46,10 +48,9 @@ public class UsuarioControler {
     }
 
     @PutMapping
-    public ResponseEntity<Void> delete(@RequestBody Usuario usuario) {
-        usuarioService.replace(usuario);
+    public ResponseEntity<Void> replace(@RequestBody UsuarioPutRequestBody usuarioPutRequestBody) {
+        usuarioService.replace(usuarioPutRequestBody);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
     }
 
 }
