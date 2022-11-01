@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
 import "./style.css";
 
 function Login() {
@@ -22,25 +23,26 @@ function Login() {
             placeholder="Senha"
             type="password"
           />
-          <input className="login__form__input" type="submit"></input>
+          <Link className="login__form__submit-btn" to="/list">
+            Entrar
+          </Link>
         </form>
 
-        <p className="login__title logo__container login__create_account">
-          Esqueceu sua senha?{" "}
+        <p className="login__title logo__container login__minor__text login__minor__forgot-password">
+          Esqueceu sua senha? &nbsp;
           <Link className="p__link" to="/create">
             Recuperar
           </Link>
         </p>
-        <p className="login__title logo__container login__create_account">
-          Não tem uma conta?{" "}
+        <p className="login__title logo__container login__minor__text">
+          Não tem uma conta? &nbsp;
           <Link className="p__link" to="/create">
             Cadastrar-se
           </Link>
         </p>
       </div>
-      <footer>
-        Copyright 2022/ Grupo de Des. Web Termos de uso e Privacidade{" "}
-      </footer>
+
+      <Footer />
     </>
   );
 }
