@@ -1,0 +1,24 @@
+.create-product__inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+button.MuiButtonBase-root.MuiFab-root.MuiFab-circular.MuiFab-sizeSmall.MuiFab-primary.MuiFab-root.MuiFab-circular.MuiFab-sizeSmall.MuiFab-primary.css-1dm1o0z-MuiButtonBase-root-MuiFab-root {
+  background-color: #527b54;
+}
+
+.input-bottom-margin {
+  margin-bottom: 16px;
+}
+
+.quantity__input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.firsts_inputs {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn__add-new-product {
+  color: #838383;
+  background-color: #ebca5f;
+  width: 30%;
+  text-align: center;
+  border-radius: 20px;
+  padding: 12px;
+  margin: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.container-table {
+  margin: 24px;
+}
+
+.box-modal {
+  padding: 20px;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid #000;
+  box-shadow: 24;
+}
+
+button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.home_btn.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  background-color: #3e563f;
+  height: 40px;
+  margin-top: 15px;
+  left: -270%;
+}

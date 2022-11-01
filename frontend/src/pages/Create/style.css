@@ -1,0 +1,22 @@
+.create-account {
+  width: 50%;
+  gap: 18px;
+}
+
+.create-account__input {
+  text-align: center;
+}
+
+.create-user__btn {
+  width: 80%;
+  color: #fff;
+}
+
+.home-btn__icon {
+  background-color: #fff !important;
+  margin: 20px !important;
+}
+
+.create__page {
+  min-height: 75vh;
+}

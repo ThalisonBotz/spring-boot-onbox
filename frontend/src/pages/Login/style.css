@@ -13,6 +13,18 @@
   justify-content: center;
 }
 
+.logo__info {
+  display: flex;
+  flex-direction: column;
+  width: 14%;
+  align-items: center;
+}
+
+.logo__info__text {
+  font-size: 11px;
+  font-weight: bold;
+}
+
 img {
   width: 50%;
 }
@@ -22,8 +34,12 @@ img {
   font-weight: bold;
 }
 
-.login__create_account {
+.login__minor__text {
   font-size: 12px;
+}
+
+.login__minor__forgot-password {
+  margin-top: 36px;
 }
 
 .p__link {
@@ -34,16 +50,30 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
+  width: 20%;
+}
+
+.login__form__submit-btn {
+  text-decoration: none;
+  color: #838383;
+  background-color: #ebca5f;
+  width: 100%;
+  text-align: center;
+  border-radius: 20px;
+  padding: 3px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .login__form__input {
   border-radius: 20px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: #486851;
+  padding: 8px;
+  border: none;
+  width: 100%;
+  color: #fff;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  font-size: 10px;
+.login__form__input::placeholder {
+  color: #fff;
 }
