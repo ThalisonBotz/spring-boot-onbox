@@ -29,13 +29,13 @@ function Login() {
         </form>
 
         <p className="login__title logo__container login__minor__text login__minor__forgot-password">
-          Esqueceu sua senha? &nbsp;
+          Esqueceu sua senha ? &nbsp;
           <Link className="p__link" to="/create">
             Recuperar
           </Link>
         </p>
         <p className="login__title logo__container login__minor__text">
-          Não tem uma conta? &nbsp;
+          Não tem uma conta ? &nbsp;
           <Link className="p__link" to="/create">
             Cadastrar-se
           </Link>

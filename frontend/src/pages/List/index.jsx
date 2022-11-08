@@ -26,7 +26,7 @@ function List() {
           <CreateItem />
         </>
       </Modal>
-      <Header title="Movimentação Geral" />
+      <Header title="Produtos em estoque" />
 
       <div className="container">
         <div className="container-btn">

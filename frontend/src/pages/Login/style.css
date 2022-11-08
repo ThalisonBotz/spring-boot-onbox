@@ -56,13 +56,17 @@ img {
 
 .login__form__submit-btn {
   text-decoration: none;
-  color: #838383;
+  color: #fff;
   background-color: #ebca5f;
   width: 100%;
   text-align: center;
   border-radius: 20px;
   padding: 3px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.login__form__submit-btn:hover {
+  background-color: #fcd34c ;
 }
 
 .login__form__input {
