@@ -1,6 +1,7 @@
 package com.onbox.userweb.service;
 
 import com.onbox.userweb.domain.Produto;
+import com.onbox.userweb.mapper.ProdutoMapper;
 import com.onbox.userweb.repository.ProdutoRepository;
 import com.onbox.userweb.requests.ProdutoPostRequestBody;
 import com.onbox.userweb.requests.ProdutoPutRequestBody;
@@ -34,13 +35,19 @@ public class ProdutoService {
      * @return
      */
     public Produto save(ProdutoPostRequestBody produtoPostRequestBody) {
-        return produtoRepository.save(Produto.builder()
+        // adicionei dentro do salve  ProdutoMapper.INSTANCE.toProduto(animePostRequestBody) 
+        //ta acusando erro no vscode 
+/* o que foi apagado do save 
+ * ) Produto.builder()
                 .nome(produtoPostRequestBody.getNome())
                 .valor(produtoPostRequestBody.getValor())
                 .quantidade(produtoPostRequestBody.getQuantidade())
                 .validade(produtoPostRequestBody.getValidade())
                 .fornecedor(produtoPostRequestBody.getFornecedor())
                 .build());
+ */
+
+        return produtoRepository.save(ProdutoMapper.INSTANCE.toProduto(animePostRequestBody));
 
     }
 
@@ -50,6 +57,11 @@ public class ProdutoService {
 
     public void replace(ProdutoPutRequestBody produtoPutRequestBody) {
         Produto savedProduto = findById(produtoPutRequestBody.getId());
+        Produto produto = ProdutoMapper.INSTANCE.toProduto(produtoPutRequestBody);
+        produto.setId(savedProduto.getId()); 
+
+
+       /*  saiu isso , depois apaga esses comentarios
         Produto produto = Produto.builder()
                 .id(savedProduto.getId())
                 .nome(produtoPutRequestBody.getNome())
@@ -57,7 +69,10 @@ public class ProdutoService {
                 .quantidade(produtoPutRequestBody.getQuantidade())
                 .validade(produtoPutRequestBody.getValidade())
                 .fornecedor(produtoPutRequestBody.getFornecedor())
-                .build();
+                .build();*/
+
         produtoRepository.save(produto);
+
+
     }
 }
