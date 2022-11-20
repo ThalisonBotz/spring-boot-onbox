@@ -39,8 +39,7 @@ public class ProdutoControler {
     //busca por name
     //localhost:8080/produto/find?teste
     @GetMapping(path = "/find")
-    public ResponseEntity<Produto> findByName(@RequestParam String name) {
-        log.info(dateUtil.formarLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
+    public ResponseEntity<List<Produto>> findByName(@RequestParam String name) {
         return ResponseEntity.ok(produtoService.findByName(name));
 
     }

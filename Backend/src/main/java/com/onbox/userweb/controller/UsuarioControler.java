@@ -39,8 +39,7 @@ public class UsuarioControler {
 
 //busca por name
     @GetMapping(path = "/find")
-    public ResponseEntity<Usuario> findByName(@RequestParam String name) {
-        log.info(dateUtil.formarLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
+    public ResponseEntity<List<Usuario>> findByName(@RequestParam String name) {
         return ResponseEntity.ok(usuarioService.findByName(name));
 
     }

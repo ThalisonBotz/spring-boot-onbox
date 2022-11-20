@@ -1,6 +1,7 @@
 package com.onbox.userweb.service;
 
 import com.onbox.userweb.domain.Produto;
+import com.onbox.userweb.exeption.BodyRequestExeption;
 import com.onbox.userweb.mapper.ProdutoMapper;
 import com.onbox.userweb.repository.ProdutoRepository;
 import com.onbox.userweb.requests.ProdutoPostRequestBody;
@@ -38,7 +39,7 @@ public class ProdutoService {
 
     public Produto findById(long id) { // quando nao localizar
         return produtoRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Produto not Found "));
+                .orElseThrow(() -> new BodyRequestExeption( "Produto not Found "));
     }
 
     /**
@@ -58,7 +59,7 @@ public class ProdutoService {
                 .build());
  */
 
-        return produtoRepository.save(ProdutoMapper.INSTANCE.toProduto(animePostRequestBody));
+        return produtoRepository.save(ProdutoMapper.INSTANCE.toProduto(produtoPostRequestBody));
 
     }
 
