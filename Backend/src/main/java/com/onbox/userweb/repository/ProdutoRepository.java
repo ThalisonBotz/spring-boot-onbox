@@ -7,6 +7,6 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {// classe do banco
-    List<Produto>findByName(String name );
+    List<Produto>findByNome(String nome);
 
 }

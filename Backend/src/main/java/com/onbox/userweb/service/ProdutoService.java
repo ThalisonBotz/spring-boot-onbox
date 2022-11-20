@@ -29,9 +29,9 @@ public class ProdutoService {
 
 
 
-    public List<Produto> findByName(String name) {
-        return produtoRepository.findByName(name);
-    } //busca por name
+    public List<Produto> findByNome(String nome) {
+        return produtoRepository.findByNome(nome);
+    } //busca por nome
 
 
 

@@ -39,8 +39,8 @@ public class UsuarioControler {
 
 //busca por name
     @GetMapping(path = "/find")
-    public ResponseEntity<List<Usuario>> findByName(@RequestParam String name) {
-        return ResponseEntity.ok(usuarioService.findByName(name));
+    public ResponseEntity<List<Usuario>> findByNome(@RequestParam String nome) {
+        return ResponseEntity.ok(usuarioService.findByNome(nome));
 
     }
 

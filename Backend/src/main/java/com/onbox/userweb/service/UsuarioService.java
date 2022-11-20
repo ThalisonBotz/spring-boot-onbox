@@ -32,9 +32,9 @@ public class UsuarioService {
 
 
 
-//busca por name
-    public List<Usuario> findByName(String name) {
-        return usuarioRepository.findByName(name);
+//busca por nome
+    public List<Usuario> findByNome(String nome) {
+        return usuarioRepository.findByNome(nome);
     }
 
 
