@@ -10,7 +10,7 @@ import com.onbox.userweb.requests.ProdutoPutRequestBody;
 @Mapper(componentModel = "spring")
 public abstract class ProdutoMapper {
 
-    public abstract final static ProdutoMapper INSTANCE = Mappers.getMapper(ProdutoMapper.class);
+    public final static ProdutoMapper INSTANCE = Mappers.getMapper(ProdutoMapper.class);
     //metodoo para chamar os  abstract
 
  public abstract Produto toProduto(ProdutoPostRequestBody ProdutoPostRequestBody);
