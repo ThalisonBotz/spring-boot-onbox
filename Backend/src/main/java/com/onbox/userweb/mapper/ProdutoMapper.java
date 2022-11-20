@@ -11,7 +11,7 @@ import com.onbox.userweb.requests.ProdutoPutRequestBody;
 public abstract class ProdutoMapper {
 
     public abstract final ProdutoMapper INSTANCE = Mappers.getMapper(ProdutoMapper.class);
-    //metodoo para chamar os abstract
+    //metodoo para chamar os  abstract
 
  public abstract Produto toProduto(ProdutoPostRequestBody ProdutoPostRequestBody);
  public abstract Produto toProduto(ProdutoPutRequestBody ProdutoPutRequestBody);

@@ -25,6 +25,17 @@ public class ProdutoService {
         return produtoRepository.findAll();
     }
 
+
+
+
+    public List<Produto> findByName(String name) {
+        return produtoRepository.findByName(name);
+    } //busca por name
+
+
+
+
+
     public Produto findById(long id) { // quando nao localizar
         return produtoRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Produto not Found "));

@@ -35,6 +35,20 @@ public class UsuarioControler {
 
     }
 
+
+
+//busca por name
+    @GetMapping(path = "/find")
+    public ResponseEntity<Usuario> findByName(@RequestParam String name) {
+        log.info(dateUtil.formarLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
+        return ResponseEntity.ok(usuarioService.findByName(name));
+
+    }
+
+
+
+
+
     @PostMapping
     public ResponseEntity<Usuario> save(@RequestBody UsuarioPostRequestBody usuarioPostRequestBody) {
         return new ResponseEntity<>(usuarioService.save(usuarioPostRequestBody), HttpStatus.CREATED);

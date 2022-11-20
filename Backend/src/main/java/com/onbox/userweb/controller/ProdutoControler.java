@@ -35,6 +35,20 @@ public class ProdutoControler {
 
     }
 
+
+    //busca por name
+    //localhost:8080/produto/find?teste
+    @GetMapping(path = "/find")
+    public ResponseEntity<Produto> findByName(@RequestParam String name) {
+        log.info(dateUtil.formarLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
+        return ResponseEntity.ok(produtoService.findByName(name));
+
+    }
+
+
+
+
+
     @PostMapping
     public ResponseEntity<Produto> save(@RequestBody ProdutoPostRequestBody produtoPostRequestBody) {
         return new ResponseEntity<>(produtoService.save(produtoPostRequestBody), HttpStatus.CREATED);
