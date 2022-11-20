@@ -40,6 +40,12 @@ function Login() {
             Cadastrar-se
           </Link>
         </p>
+        <p className="login__title logo__container login__minor__text">
+          Dúvidas? &nbsp;
+          <Link className="p__link" to="/faq">
+            Acesse nosso FAQ
+          </Link>
+        </p>
       </div>
 
       <Footer />
