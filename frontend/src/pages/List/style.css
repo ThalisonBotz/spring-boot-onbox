@@ -6,6 +6,28 @@
 .container-btn {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+button.home_btn {
+  align-items: center;
+  display: flex;
+  border-radius: 20px;
+  border: none;
+  text-decoration: none;
+  background: white;
+  padding: 7px 12px;
+}
+
+.home_btn {
+  left: 2%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.home_btn
+  svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
+  margin-right: 6px;
 }
 
 .btn__add-new-product {
@@ -19,6 +41,7 @@
   font-size: 14px;
   font-weight: bold;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  cursor: pointer;
 }
 
 .container-table {
