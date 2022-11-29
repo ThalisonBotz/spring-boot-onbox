@@ -26,9 +26,6 @@ public class ProdutoService {
         return produtoRepository.findAll();
     }
 
-
-
-
     public List<Produto> findByNome(String nome) {
         return produtoRepository.findByNome(nome);
     } //busca por nome
@@ -47,17 +44,6 @@ public class ProdutoService {
      * @return
      */
     public Produto save(ProdutoPostRequestBody produtoPostRequestBody) {
-        // adicionei dentro do salve  ProdutoMapper.INSTANCE.toProduto(animePostRequestBody) 
-        //ta acusando erro no vscode 
-/* o que foi apagado do save 
- * ) Produto.builder()
-                .nome(produtoPostRequestBody.getNome())
-                .valor(produtoPostRequestBody.getValor())
-                .quantidade(produtoPostRequestBody.getQuantidade())
-                .validade(produtoPostRequestBody.getValidade())
-                .fornecedor(produtoPostRequestBody.getFornecedor())
-                .build());
- */
 
         return produtoRepository.save(ProdutoMapper.INSTANCE.toProduto(produtoPostRequestBody));
 
