@@ -29,6 +29,20 @@ public class UsuarioService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "User not Found "));
     }
 
+
+
+
+//busca por nome
+    public List<Usuario> findByNome(String nome) {
+        return usuarioRepository.findByNome(nome);
+    }
+
+
+
+
+
+
+
     /**
      * @param usuarioPostRequestBody
      * @return

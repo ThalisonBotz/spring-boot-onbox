@@ -30,7 +30,7 @@ const ListItem = () => {
             <TableRow>
               <TableCell align="center">ID</TableCell>
               <TableCell align="center">Nome</TableCell>
-              <TableCell align="center">Valor</TableCell>
+              <TableCell align="center">Valor(R$)</TableCell>
               <TableCell align="center">Quantidade</TableCell>
               <TableCell align="center">Validade</TableCell>
               <TableCell></TableCell>

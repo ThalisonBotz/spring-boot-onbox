@@ -1,6 +1,8 @@
 package com.onbox.userweb.service;
 
 import com.onbox.userweb.domain.Produto;
+import com.onbox.userweb.exeption.BodyRequestExeption;
+import com.onbox.userweb.mapper.ProdutoMapper;
 import com.onbox.userweb.repository.ProdutoRepository;
 import com.onbox.userweb.requests.ProdutoPostRequestBody;
 import com.onbox.userweb.requests.ProdutoPutRequestBody;
@@ -24,9 +26,17 @@ public class ProdutoService {
         return produtoRepository.findAll();
     }
 
+    public List<Produto> findByNome(String nome) {
+        return produtoRepository.findByNome(nome);
+    } //busca por nome
+
+
+
+
+
     public Produto findById(long id) { // quando nao localizar
         return produtoRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Produto not Found "));
+                .orElseThrow(() -> new BodyRequestExeption( "Produto not Found "));
     }
 
     /**
@@ -34,13 +44,8 @@ public class ProdutoService {
      * @return
      */
     public Produto save(ProdutoPostRequestBody produtoPostRequestBody) {
-        return produtoRepository.save(Produto.builder()
-                .nome(produtoPostRequestBody.getNome())
-                .valor(produtoPostRequestBody.getValor())
-                .quantidade(produtoPostRequestBody.getQuantidade())
-                .validade(produtoPostRequestBody.getValidade())
-                .fornecedor(produtoPostRequestBody.getFornecedor())
-                .build());
+
+        return produtoRepository.save(ProdutoMapper.INSTANCE.toProduto(produtoPostRequestBody));
 
     }
 
@@ -50,6 +55,11 @@ public class ProdutoService {
 
     public void replace(ProdutoPutRequestBody produtoPutRequestBody) {
         Produto savedProduto = findById(produtoPutRequestBody.getId());
+        Produto produto = ProdutoMapper.INSTANCE.toProduto(produtoPutRequestBody);
+        produto.setId(savedProduto.getId()); 
+
+
+       /*  saiu isso , depois apaga esses comentarios
         Produto produto = Produto.builder()
                 .id(savedProduto.getId())
                 .nome(produtoPutRequestBody.getNome())
@@ -57,7 +67,10 @@ public class ProdutoService {
                 .quantidade(produtoPutRequestBody.getQuantidade())
                 .validade(produtoPutRequestBody.getValidade())
                 .fornecedor(produtoPutRequestBody.getFornecedor())
-                .build();
+                .build();*/
+
         produtoRepository.save(produto);
+
+
     }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import ListItem from "../../components/ListItem/ListItem";
 import Button from "@mui/material/Button";
@@ -10,9 +10,14 @@ import "./style.css";
 import Footer from "../../components/Footer";
 
 function List() {
+  const navigate = useNavigate();
+
   const [openModal, setOpenModal] = useState(false);
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
+  const handleGoHomeBtn = () => {
+    navigate("/");
+  };
 
   return (
     <>
@@ -30,15 +35,10 @@ function List() {
 
       <div className="container">
         <div className="container-btn">
-          <Link to={`/`}>
-            <Button
-              className="home_btn"
-              variant="contained"
-              startIcon={<HomeIcon />}
-            >
-              Sair
-            </Button>
-          </Link>
+          <button className="home_btn" onClick={handleGoHomeBtn}>
+            <HomeIcon />
+            Sair
+          </button>
           <input
             className="btn__add-new-product"
             type="button"

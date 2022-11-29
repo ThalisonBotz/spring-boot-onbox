@@ -35,6 +35,19 @@ public class UsuarioControler {
 
     }
 
+
+
+//busca por name
+    @GetMapping(path = "/find")
+    public ResponseEntity<List<Usuario>> findByNome(@RequestParam String nome) {
+        return ResponseEntity.ok(usuarioService.findByNome(nome));
+
+    }
+
+
+
+
+
     @PostMapping
     public ResponseEntity<Usuario> save(@RequestBody UsuarioPostRequestBody usuarioPostRequestBody) {
         return new ResponseEntity<>(usuarioService.save(usuarioPostRequestBody), HttpStatus.CREATED);

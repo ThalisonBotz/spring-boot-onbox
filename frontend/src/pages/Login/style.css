@@ -61,8 +61,31 @@ img {
   width: 100%;
   text-align: center;
   border-radius: 20px;
-  padding: 3px;
+  padding: 8px 0px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border: none;
+  font-size: 16px;
+}
+
+.login__form__submit-btn:hover {
+  cursor: pointer;
+}
+
+.login__form__password-field {
+  display: flex;
+  align-items: center;
+  width: 106%;
+}
+
+.login__form__password-field
+  svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
+  position: absolute;
+  left: 58%;
+}
+
+.login-form__visibility-btn {
+  margin-top: -8%;
+  cursor: pointer;
 }
 
 .login__form__submit-btn:hover {
