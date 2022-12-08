@@ -3,12 +3,16 @@
   gap: 18px;
 }
 
+.login__form.create-account {
+  align-items: center;
+}
+
 .create-account__input {
   text-align: center;
 }
 
 .create-user__btn {
-  width: 80%;
+  width: 100%;
   color: #fff;
 }
 
