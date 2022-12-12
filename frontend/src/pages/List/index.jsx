@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import ListItem from "../../components/ListItem/ListItem";
@@ -15,9 +15,18 @@ function List() {
   const [openModal, setOpenModal] = useState(false);
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
+  const [valueToAddList, setValueToAddList] = useState(null);
   const handleGoHomeBtn = () => {
     navigate("/");
   };
+
+  const test = (product) => {
+    console.log(product);
+    setValueToAddList(product);
+    setOpenModal(false);
+  };
+
+  useEffect(() => {});
 
   return (
     <>
@@ -28,7 +37,7 @@ function List() {
         aria-describedby="modal-modal-description"
       >
         <>
-          <CreateItem />
+          <CreateItem onClose={test} />
         </>
       </Modal>
       <Header title="Movimentação Geral" />
@@ -48,7 +57,7 @@ function List() {
         </div>
 
         <div className="container-table">
-          <ListItem />
+          <ListItem newValue={valueToAddList} />
         </div>
       </div>
 
