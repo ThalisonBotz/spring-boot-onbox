@@ -37,7 +37,7 @@ public class ProdutoControler {
 
 
     //busca por nome
-    //localhost:8080/produto/find?teste
+    //localhost:8080/produto/find?nome=nome salvo no banco
     @GetMapping(path = "/find")
     public ResponseEntity<List<Produto>> findByNome(@RequestParam String nome) {
         return ResponseEntity.ok(produtoService.findByNome(nome));
