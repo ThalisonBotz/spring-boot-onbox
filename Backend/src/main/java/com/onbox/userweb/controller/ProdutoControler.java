@@ -35,7 +35,6 @@ public class ProdutoControler {
 
     }
 
-
     //busca por nome
     //localhost:8080/produto/find?nome=nome salvo no banco
     @GetMapping(path = "/find")
@@ -43,10 +42,6 @@ public class ProdutoControler {
         return ResponseEntity.ok(produtoService.findByNome(nome));
 
     }
-
-
-
-
 
     @PostMapping
     public ResponseEntity<Produto> save(@RequestBody ProdutoPostRequestBody produtoPostRequestBody) {

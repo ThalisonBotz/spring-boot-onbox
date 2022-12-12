@@ -10,7 +10,4 @@ public class UserwebApplication {
 		SpringApplication.run(UserwebApplication.class, args);
 	}
 
-
-
-
 }
